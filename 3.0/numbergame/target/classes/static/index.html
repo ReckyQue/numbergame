@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose Your Role</title>
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <button id="instructionsButton" class="instructions-button">游戏说明</button>
+    <div class="container">
+        <h1>Choose Your Role</h1>
+        <p>最好先阅读游戏说明后再开始游戏哦</p>
+        <div class="role-selection">
+            <button id="hostButton" class="form-button">主持人</button>
+            <button id="playerButton" class="form-button">玩家</button>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+    <script>
+        document.getElementById('instructionsButton').addEventListener('click', () => {
+            window.location.href = 'markdown_displayhtml.html';
+        });
+    </script>
+</body>
+</html>

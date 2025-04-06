@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Player Section</title>
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="css\responsive.css">
+</head>
+<body>
+    <button id="returnButton" class="return-button">返回首页</button> <!-- 返回首页按钮 -->
+    <button id="markdownButton" class="instructions-button">游戏说明</button> <!-- 游戏说明按钮 -->
+    <div class="container">
+        <h1>Number Game</h1>
+        <div class="player-section">
+            <h2>玩家区</h2>
+            <div class="game-instructions">
+                <h3>游戏说明</h3>
+                <p>欢迎来到数字游戏！以下是游戏规则：</p>
+                <ol>
+                    <li>每个玩家提交一个介于1到100之间的数字。</li>
+                    <li>所有玩家提交数字后，系统会计算所有数字的平均值(Prize)，并取其2/3作为Winner Number。</li>
+                    <li>所提交数字最接近目标数字(Winner Number)的玩家获胜，允许多人同时获胜。</li>
+                    <li><strong>注：</strong>在提交数字时需要思考如何使其尽可能地接近Winner Number以获得奖励。</li>
+                    <li><strong>最好先阅读游戏说明后再开始游戏哦</strong></li>
+                </ol>
+                <p>祝你好运，玩得开心！</p>
+            </div>
+            <form id="numberForm" class="form-group">
+                <label for="number">输入一个介于1到100之间的数字：</label>
+                <input type="number" id="number" name="number" required min="1" max="100" class="form-input">
+                <button type="submit" class="form-button button button-primary">提交</button>
+            </form>
+        </div>
+        <div id="result" class="result"></div>
+        <div id="numStudents" class="info">已提交的玩家数量：0</div>
+        <div id="participantsDisplay" class="info">参与人数：10</div>
+        <div id="numWinners" class="info">赢家人数：0</div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>
