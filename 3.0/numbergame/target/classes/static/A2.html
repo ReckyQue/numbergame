@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Display</title>
+    <link rel="stylesheet" href="css\main.css">
+    <link rel="stylesheet" href="css\markdown.css">
+    <link rel="stylesheet" href="css\responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css/github-markdown.css">
+</head>
+<body>
+    <button id="instructionsButton" class="return-button">游戏说明</button>
+    <button id="readmeButton" class="readme-button">README</button>
+    <div class="markdown-body" id="markdown-content">
+        <!-- Markdown内容将在这里显示 -->
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const markdownContentDiv = document.getElementById('markdown-content');
+            fetch('/markdown/A2.md')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(htmlContent => {
+                    markdownContentDiv.innerHTML = htmlContent;
+                })
+                .catch(error => {
+                    console.error('Error loading the Markdown file:', error);
+                    markdownContentDiv.innerHTML = '<p>无法加载Markdown文件</p>';
+                });
+
+            document.getElementById('instructionsButton').addEventListener('click', () => {
+                window.location.href = 'markdown_displayhtml.html';
+            });
+            document.getElementById('readmeButton').addEventListener('click', () => {
+                window.location.href = 'README.html';
+            });
+        });
+    </script>
+</body>
+</html>
